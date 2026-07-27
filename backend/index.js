@@ -25,6 +25,12 @@ app.use('/api/auth',auth)
 const edit = require('./routes/Eva/edit_eva')
 app.use('/api/Eva/edit_eva',edit)
 
+const self = require('./routes/Eva/selfeva')
+app.use('/api/Eva/selfeva',self)
+
+const score_m = require('./routes/Eva/score_member')
+app.use('/api/Eva/score_member',score_m)
+
 
 app.use((req,res)=> res.status(404).json({message:'404 invalid Route77'}))
 app.listen(3001, ()=> console.log("Server Runnig in Port 3001✅"))
