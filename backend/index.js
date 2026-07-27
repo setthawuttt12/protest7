@@ -30,5 +30,8 @@ app.use('/api/Eva/edit_eva',edit)
 const score_member2 = require('./routes/Commit/score_member')
 app.use('/api/Commit/score_member',score_member2)
 
+const show_eva = require('./routes/Commit/show_eva')
+app.use('/api/Commit/show_eva',show_eva)
+
 app.use((req,res)=> res.status(404).json({message:'404 invalid Route77'}))
 app.listen(3001, ()=> console.log("Server Runnig in Port 3001✅"))
