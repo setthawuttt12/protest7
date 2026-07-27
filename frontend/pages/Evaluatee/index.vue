@@ -7,9 +7,9 @@
                     <v-card-text>
                         <v-row>
                             <v-col cols="12" md="4" v-for="b in box" :key="b">
-                                <v-card elevation="3" class="pa-4" rounded="lg">
+                                <v-card elevation="3" class="pa-4">
                                     <div class="text-h5 text-center">{{ b.title }}</div>
-                                    <div class="text-h5 text-center">{{ b.value }} &nbsp;คน</div>
+                                    <div class="text-h5 text-center">{{ b.value }}</div>
                                 </v-card>
                             </v-col>
                         </v-row>
@@ -25,23 +25,18 @@ import {api,staff} from '../../API/base'
 const token = import.meta.client ? localStorage.getItem('token') : null
 
 const box = ref ([])
-const box2 = ref ([])
-const result_ip = ref ([])
+
 
 const fetch = async () => {
     try{
-        const res = await axios.get(`${api}/dash/staff`,{headers:{Authorization:`Bearer ${token}`}})
+        const res = await axios.get(`${api}/dash/eva`,{headers:{Authorization:`Bearer ${token}`}})
         box.value = res.data.box
-        box2.value = res.data.box2
     }catch(err){
         console.error("Error Fetching",err)
     }
 }
 
-
-
 onMounted(fetch)
-
 </script>
 
 <style scoped>

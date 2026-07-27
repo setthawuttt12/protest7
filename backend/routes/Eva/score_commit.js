@@ -20,6 +20,19 @@ router.get('/topic',verifyToken,requireRole('ผู้รับการปร�
     }
 })
 
+router.get('/commit',verifyToken,requireRole('ผู้รับการประเมินผล'),async(req,res)=>{
+    try {
+        const id_member = req.user.id_member
+        const [rows] = await db.query(
+            `select * from tb_member m,tb_eva e,tb_system s,tb_commit c where e.id_member=? and e.id_eva=c.id_eva and c.id_member=m.id_member and e.id_sys=s.id_sys order by e.id_eva desc`,
+            [id_member]
+        )
+        res.json(rows[0])
+    } catch (error) {
+        console.error("Error GET User",error)
+        res.status(500).json({message:'Error GET User'})
+    }
+})
 router.get('/scores',verifyToken,requireRole('ผู้รับการประเมินผล'),async(req,res)=>{
     try {
         const id_member = req.user.id_member

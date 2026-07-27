@@ -5,27 +5,6 @@
                         <h1 class="text-h5 font-weight-bold">เอกสารหรือคู่มือสำหรับการประเมิน</h1>
                     </v-sheet>
                     <v-card-text>
-                        <v-form @submit.prevent="saveMember">
-                            <v-row>
-                                <v-col cols="12" md="12">
-                                    <v-text-field label="ชื่อเอกสาร" v-model="name_doc"></v-text-field>
-                                </v-col>
-                                <v-col cols="12" md="12">
-                                    <v-file-input label="ไฟล์" v-model="file" accept=".pdf" />
-                                     <p class="text-error font-weight-bold">*** รองรับเฉพาะไฟล์ PDF ***</p>
-                                </v-col>
-                               
-                               <v-row>
-                                <v-col  cols="12" md="6" >
-                                    <v-btn color="blue" block type="submit">บันทึก</v-btn>
-                                </v-col>
-                                <v-col  cols="12" md="6" >
-                                    <v-btn color="error" block type="reset">ยกเลิก</v-btn>
-                                </v-col>
-                               </v-row>
-                            </v-row>
-                        </v-form>
-                        <br><br><br>
                         <v-table>
                             <thead>
                                 <tr>
@@ -33,7 +12,6 @@
                                     <th class="text-center border">ชื่อเอกสาร</th>
                                     <th class="text-center border">วันที่เพิ่ม</th>
                                     <th class="text-center border">ไฟล์</th>
-                                    <th class="text-center border">จัดการ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,9 +21,6 @@
                                     <td class="text-center border">{{ items.day_doc }}</td>
                                     <td class="text-center border">
                                         <v-btn color="warning" size="small" prepend-icon="mdi-eye" @click="views(items.file)">เปิดดู</v-btn>
-                                    </td>
-                                    <td class="text-center border">
-                                        <v-btn color="error" class="text-white" size="small" @click="del(items.id_doc)">ลบ</v-btn>
                                     </td>
                                 </tr>
                                 <tr v-if="result.length === 0">
@@ -70,7 +45,7 @@ const file = ref<File | null>(null)
 
 const fetch = async () => {
     try{
-        const res = await axios.get(`${staff}/doc`,{headers:{Authorization:`Bearer ${token}`}})
+        const res = await axios.get(`${api}/docnoe`,{headers:{Authorization:`Bearer ${token}`}})
         result.value = res.data
     }catch(err){
         console.error("Error Fetching",err)
