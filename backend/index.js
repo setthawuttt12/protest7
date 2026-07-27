@@ -54,5 +54,10 @@ app.use('/api/Commit/score_commit',score_commit2)
 const signature = require('./routes/Commit/signature')
 app.use('/api/Commit/signature',signature)
 
+
+const docnoe = require('./routes/docnoe')
+app.use('/api/docnoe', docnoe)
+
+
 app.use((req,res)=> res.status(404).json({message:'404 invalid Route77'}))
 app.listen(3001, ()=> console.log("Server Runnig in Port 3001✅"))
