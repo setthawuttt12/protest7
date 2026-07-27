@@ -22,6 +22,28 @@
                                </v-row>
                             </v-row>
                         </v-form>
+                        <!-- <v-table v-else>
+                            <thead>
+                                <tr>
+                                    <th class="text-center border">ลำดับ</th>
+                                    <th class="text-center border">ไฟล์</th>
+                                    <th class="text-center border">จัดการ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center border">{{ 1 }}</td>
+                                    <td class="text-center border">{{ result.signature }}</td>
+                                    <td class="text-center border">
+                                        <v-btn color="warning" size="small" prepend-icon="mdi-eye" @click="views(result.signature)">เปิดดู</v-btn>&nbsp;&nbsp;
+                                        <v-btn color="error" class="text-white" size="small" @click="del(id_eva)">ลบ</v-btn>
+                                    </td>
+                                </tr>
+                                <tr v-if="result.length === 0">
+                                    <td class="text-center border" colspan="10">ไม่พบข้อมูล</td>
+                                </tr>
+                            </tbody>
+                        </v-table> -->
                     </v-card-text>
                 </v-card>
    </v-container>

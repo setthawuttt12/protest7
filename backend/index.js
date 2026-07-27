@@ -25,6 +25,15 @@ app.use('/api/auth',auth)
 const edit = require('./routes/Eva/edit_eva')
 app.use('/api/Eva/edit_eva',edit)
 
+const self = require('./routes/Eva/selfeva')
+app.use('/api/Eva/selfeva',self)
+
+const score_m = require('./routes/Eva/score_member')
+app.use('/api/Eva/score_member',score_m)
+
+const score_c = require('./routes/Eva/score_commit')
+app.use('/api/Eva/score_commit',score_c)
+
 
 //commit
 const show_eva = require('./routes/Commit/show_eva')
