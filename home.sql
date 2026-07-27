@@ -31,7 +31,7 @@ CREATE TABLE `tb_eva` (
   `total_commit` double(10,2) DEFAULT NULL,
   `date_eva` date DEFAULT NULL,
   PRIMARY KEY (`id_eva`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +40,7 @@ CREATE TABLE `tb_eva` (
 
 LOCK TABLES `tb_eva` WRITE;
 /*!40000 ALTER TABLE `tb_eva` DISABLE KEYS */;
+INSERT INTO `tb_eva` VALUES (1,1,1,2,12.00,NULL,'2025-06-05');
 /*!40000 ALTER TABLE `tb_eva` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,6 +68,7 @@ CREATE TABLE `tb_evadetail` (
 
 LOCK TABLES `tb_evadetail` WRITE;
 /*!40000 ALTER TABLE `tb_evadetail` DISABLE KEYS */;
+INSERT INTO `tb_evadetail` VALUES (1,1,'1','noway',2,NULL,'17851380104611s9qanv10hp.png');
 /*!40000 ALTER TABLE `tb_evadetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +87,7 @@ CREATE TABLE `tb_indicate` (
   `point_indicate` int DEFAULT NULL,
   `check_indicate` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_indicate`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +96,7 @@ CREATE TABLE `tb_indicate` (
 
 LOCK TABLES `tb_indicate` WRITE;
 /*!40000 ALTER TABLE `tb_indicate` DISABLE KEYS */;
+INSERT INTO `tb_indicate` VALUES (1,1,'indicate_computer','how to use computer',3,'y');
 /*!40000 ALTER TABLE `tb_indicate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +144,7 @@ CREATE TABLE `tb_system` (
   `year_sys` int DEFAULT NULL,
   `status_sys` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_sys`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,6 +153,7 @@ CREATE TABLE `tb_system` (
 
 LOCK TABLES `tb_system` WRITE;
 /*!40000 ALTER TABLE `tb_system` DISABLE KEYS */;
+INSERT INTO `tb_system` VALUES (1,'2025-06-05','2090-05-06',1,1,'y');
 /*!40000 ALTER TABLE `tb_system` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +168,7 @@ CREATE TABLE `tb_topic` (
   `id_topic` int NOT NULL AUTO_INCREMENT,
   `name_topic` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_topic`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,6 +177,7 @@ CREATE TABLE `tb_topic` (
 
 LOCK TABLES `tb_topic` WRITE;
 /*!40000 ALTER TABLE `tb_topic` DISABLE KEYS */;
+INSERT INTO `tb_topic` VALUES (1,'computer');
 /*!40000 ALTER TABLE `tb_topic` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,4 +194,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-27 12:02:22
+-- Dump completed on 2026-07-27 16:02:47
